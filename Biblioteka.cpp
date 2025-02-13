@@ -32,3 +32,31 @@ void shfaqBiblioteken(const vector<Liber>& biblioteka) {
              << ", Statusi: " << (liber.ne_sirtar ? "Ne sirtar" : "Mungon") << endl;
     }
 }
+
+// Funksioni per te kerkuar nje liber dhe per te ndryshuar statusin e tij
+void menaxhoKerkimin(vector<Liber>& biblioteka) {
+    string titulli;
+    cout << "\nShkruani titullin e librit qe deshironi te kerkoni: ";
+    getline(cin, titulli);
+
+    for (auto& liber : biblioteka) {
+        if (liber.titulli == titulli) {
+            if (liber.ne_sirtar) {
+                cout << "\nLibri \"" << liber.titulli << "\" eshte ne sirtar." << endl;
+                cout << "A deshironi ta merrni? (po/jo): ";
+                string pergjigje;
+                getline(cin, pergjigje);
+                if (pergjigje = "po") {
+                    liber.ne_sirtar = false;
+                    cout << "\nStatusi i librit u ndryshua ne: Mungon." << endl;
+                } else {
+                    cout << "\nLibri mbeti ne sirtar." << endl;
+                }
+            } else {
+                cout << "\nPer momentin nuk e kemi ate liber." << endl;
+            }
+            return;
+        }
+    }
+    cout << "\nLibri nuk u gjet ne biblioteke." << endl;
+}
