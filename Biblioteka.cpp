@@ -79,3 +79,18 @@ void ktheLiber(vector<Liber>& biblioteka) {
     }
     cout << "\nLibri nuk u gjet ne biblioteke." << endl;
 }
+// Funksioni per te fshire nje liber
+void fshiLiber(vector<Liber>& biblioteka) {
+    string titulli;
+    cout << "\nShkruani titullin e librit qe deshironi te fshini: ";
+    getline(cin, titulli);
+
+    for (auto it = biblioteka.begin(); it != biblioteka.end(); ++it) {
+        if (it->titulli == titulli) {
+            cout << "\nLibri \"" << it->titulli << "\" u fshi nga biblioteka." << endl;
+            biblioteka.erase(it);
+            return;
+        }
+    }
+    cout << "\nLibri nuk u gjet ne biblioteke." << endl;
+}
