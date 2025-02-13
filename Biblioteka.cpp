@@ -94,3 +94,53 @@ void fshiLiber(vector<Liber>& biblioteka) {
     }
     cout << "\nLibri nuk u gjet ne biblioteke." << endl;
 }
+// Funksioni kryesor main
+int main() {
+    vector<Liber> biblioteka;
+    
+    // Shtimi i disa librave
+    shtoLiber(biblioteka, "Lahuta e Malcis", "Gjergj Fishta", true);
+    shtoLiber(biblioteka, "Gjenerali i ushtrise se vdekur", "Isamil Kadare", true);
+    shtoLiber(biblioteka, "Hamleti", "William Shakespeare", true);
+    shtoLiber(biblioteka, "Pride and Prejudice", "Jane Austen", true);
+    shtoLiber(biblioteka, "Iliada & Odisea", "Homeri", true);
+    shtoLiber(biblioteka, "Komedia Hyjnore", "Dante Alighieri", true);
+    shtoLiber(biblioteka, "Lufta dhe Paqja", "Lev Tolstoi", true);
+    
+    while (true) {
+        cout << "\nZgjidhni nje opsion:" << endl;
+        cout << "1. Kerkoni nje liber" << endl;
+        cout << "2. Shtoni nje liber" << endl;
+        cout << "3. Fshini nje liber" << endl;
+        cout << "4. Ktheni nje liber" << endl;
+        cout << "5. Shfaqni te gjithe librat" << endl;
+        cout << "6. Dilni" << endl;
+        cout << "Shtyp numrin : ";
+    
+        string zgjedhja;
+        getline(cin, zgjedhja);
+        
+        if (zgjedhja == "1") {
+            menaxhoKerkimin(biblioteka);
+        } else if (zgjedhja == "2") {
+            string titulli, autori;
+            cout << "\nShkruani titullin e librit: ";
+            getline(cin, titulli);
+            cout << "Shkruani autorin e librit: ";
+            getline(cin, autori);
+            shtoLiber(biblioteka, titulli, autori, true);
+        } else if (zgjedhja == "3") {
+            fshiLiber(biblioteka);
+        } else if (zgjedhja == "4") {
+            ktheLiber(biblioteka);
+        } else if (zgjedhja == "5") {
+            shfaqBiblioteken(biblioteka);
+        } else if (zgjedhja == "6") {
+            cout << "\nDuke dalur..." << endl;
+            break;
+        } else {
+            cout << "\nOpsion i pavlefshem, provoni perseri!" << endl;
+        }
+    }
+    return 0;
+}
