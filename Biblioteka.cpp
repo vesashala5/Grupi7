@@ -60,3 +60,22 @@ void menaxhoKerkimin(vector<Liber>& biblioteka) {
     }
     cout << "\nLibri nuk u gjet ne biblioteke." << endl;
 }
+// Funksioni per te kthyer nje liber ne sirtar
+void ktheLiber(vector<Liber>& biblioteka) {
+    string titulli;
+    cout << "\nShkruani titullin e librit qe po ktheni: ";
+    getline(cin, titulli);
+    
+    for (auto& liber : biblioteka) {
+        if (liber.titulli == titulli) {
+            if (!liber.ne_sirtar) {
+                liber.ne_sirtar = true;
+                cout << "\nLibri \"" << titulli << "\" u kthye ne sirtar." << endl;
+            } else {
+                cout << "\nKy liber eshte tashme ne sirtar!" << endl;
+            }
+            return;
+        }
+    }
+    cout << "\nLibri nuk u gjet ne biblioteke." << endl;
+}
