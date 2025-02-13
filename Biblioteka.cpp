@@ -46,7 +46,7 @@ void menaxhoKerkimin(vector<Liber>& biblioteka) {
                 cout << "A deshironi ta merrni? (po/jo): ";
                 string pergjigje;
                 getline(cin, pergjigje);
-                if (pergjigje = "po") {
+                if (pergjigje == "po") {
                     liber.ne_sirtar = false;
                     cout << "\nStatusi i librit u ndryshua ne: Mungon." << endl;
                 } else {
