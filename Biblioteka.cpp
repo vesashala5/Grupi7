@@ -94,3 +94,26 @@ void fshiLiber(vector<Liber>& biblioteka) {
     }
     cout << "\nLibri nuk u gjet ne biblioteke." << endl;
 }
+// Funksioni kryesor main
+int main() {
+    vector<Liber> biblioteka;
+    
+    // Shtimi i disa librave
+    shtoLiber(biblioteka, "Lahuta e Malcis", "Gjergj Fishta", true);
+    shtoLiber(biblioteka, "Gjenerali i ushtrise se vdekur", "Isamil Kadare", true);
+    shtoLiber(biblioteka, "Hamleti", "William Shakespeare", true);
+    shtoLiber(biblioteka, "Pride and Prejudice", "Jane Austen", true);
+    shtoLiber(biblioteka, "Iliada & Odisea", "Homeri", true);
+    shtoLiber(biblioteka, "Komedia Hyjnore", "Dante Alighieri", true);
+    shtoLiber(biblioteka, "Lufta dhe Paqja", "Lev Tolstoi", true)
+    
+    while (true) {
+        cout << "\nZgjidhni nje opsion:" << endl;
+        cout << "1. Kerkoni nje liber" << endl;
+        cout << "2. Shtoni nje liber" << endl;
+        cout << "3. Fshini nje liber" << endl;
+        cout << "4. Ktheni nje liber" << endl;
+        cout << "5. Shfaqni te gjithe librat" << endl;
+        cout << "6. Dilni" << endl;
+        cout << "Shtyp numrin : ";
+    }}
